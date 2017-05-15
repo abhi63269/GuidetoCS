@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile</title>
+	<link rel="stylesheet" type="text/css" href="css/Profilecss.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<style type="text/css">
+	*{
+		margin: 0px;
+	}
+	h3{
+		color: white;
+		margin-bottom: 30px;
+	}
+	.cont h1{
+		color: white;
+	}
+		.cont{
+			padding-top: 250px;
+			background-color: blue;
+		}
+		.cont2{
+			padding: 65px;
+			background-color: lightblue;
+		}
+		hr{
+			text-align: center;
+			padding: 0px;
+			border: 2px solid white;
+		}
+		.cont1{
+			border-radius: 100px;
+			border:2px solid white;
+			width: 200px;
+			height: 200px;
+			position:absolute;
+			left: 43%;
+			bottom: 33%;
+			background-image: url(Images/Abhishek.jpg);
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+		<div class="cont">
+			<h1>Abhishek Jain</h1>
+			<h3>Computer Science</h3>
+			<hr>
+			<div class="cont1">
+			</div>
+		</div>
+	<div class="cont2">
+		<h1 class="Edit">Edit details:</h1>
+	<div class="container1">
+	<form action="Dash.html">
+		<table class="Table">
+			<tr>
+				<th>Name:</th>
+				<td><input type="text" name="Name" value="Abhishek Jain" required style="width: 200px; height: 25px;"></td>
+			</tr>
+			<tr>
+  				<th>Date of Birth:</th>
+  				<td><input type="date" id="DOB" value="1997-05-23" required style="width: 200px; height: 25px; "></td>
+  			</tr>
+  			<tr>
+  				<th>Branch:</th>
+  				<td><input type="text" name="Branch" value="Computer Science" required style="width: 200px; height: 25px;"></td>
+  			</tr>
+  			<tr>
+  				<th>Semester:</th>
+  				<td><input type="number" name="Sem"  value="6" min="1" max="8" required style="width: 200px; height: 25px;"></td>
+  			</tr>
+  			<tr>
+  				<th>Gender:</th>
+  				<td><input type="radio" name="Gender" value="Male" required checked><label>Male &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input type="radio" name="Gender" value="Female" required><label>Female</label></td>
+  			</tr>
+  			<tr>
+  				<th>EMail:</th>
+  				<td><input type="email" name="EMail" placeholder="Enter your EMail"  value="abhi63269@gmail.com" required style="width: 200px; height: 25px;"></td>
+  			</tr>
+  			<tr>
+  				<th>Phone No.:</th>
+  				<td><input type="tel" name="Phone" placeholder="Enter your Phone No." value="7772841474" maxlengtd="10" minlengtd="10"  required style="width: 200px; height: 25px;"></td>
+  			</tr>
+  			<tr>
+  				<th>Old Password:</th>
+          		<td><input type="password" name="Pass" placeholder="Old Password" maxlength="20" minlength="8"  required style="width: 200px; height: 25px;"></td>
+        	</tr>
+        	<tr>
+  				<th>New Password:</th>
+          		<td><input type="password" name="NPass" placeholder="New Password" maxlength="20" minlength="8"  required style="width: 200px; height: 25px;"></td>
+        	</tr>
+        	<tr>
+        	  <th>Confirm Password:</th>
+        	  <td><input type="password" name="CPass" placeholder="Confirm Password" maxlength="20" minlength="8"  required style="width: 200px; height: 25px;"></td>
+  			</tr>
+		</table>
+		<button class="SCButton" type="submit">Save Changes</button>
+	</form>
+	</div>
+</body>
+</html>

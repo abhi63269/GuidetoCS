@@ -1,0 +1,317 @@
+<%@page import="java.util.ArrayList"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Administrator</title>
+	<link rel="stylesheet" type="text/css" href="css/Admincss.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+	
+
+	<div class="container">
+		<div class="text">
+                    <a href="logout.jsp"><h3><i class="fa fa-sign-out" aria-hidden="true"></i>  Sign Out</h3></a>
+			<div class="Span">
+			
+			</div>
+		</div>
+    
+		<h3 class="Name">Welcome! Administrator</h3>
+		<hr class="Line">
+		<div>
+		<div>
+			<h3 style="margin-top:50px; margin-left: 20%; background-color:rgba(52, 73, 94, 0.5);"><a href="#Test" onclick="myfunc()" style="text-decoration: none; color: black; font-weight: bold; font-size: 25px;">&rarr;  Update Quiz</a></h3>
+			<div id="Test">
+			<div>
+				<input type="button" name="add" value="Add questions" id="addq" style=" margin-top: 20px; background-color: #2ecc71; padding: 5px; cursor:pointer;" onclick="addq()">
+				<input type="button" name="del" value="Delete questions" id="delq" style="  margin-left: 20px;  background-color: #e74c3c; padding: 5px; cursor: pointer; "  onclick="delq()">
+			</div>
+			<div id="inner" style="display:none;">
+				<form action="AddQues" method="post">
+					<table>
+						<tr>
+							<th>Course:</th>
+							<td><input type="text" name="sub" placeholder="Enter course"></td>
+						</tr>
+						<tr>
+							<th>Question:</th>
+							<td><input type="text" name="ques" placeholder="Enter question"></td>
+						</tr>
+						<tr>
+							<th>Option1:</th>
+							<td><input type="text" name="opt1" placeholder="Enter option"></td>
+						</tr>
+						<tr>
+							<th>Option2:</th>
+							<td><input type="text" name="opt2" placeholder="Enter option"></td>
+						</tr>
+						<tr>
+							<th>Option3:</th>
+							<td><input type="text" name="opt3" placeholder="Enter option"></td>
+						</tr>
+						<tr>
+							<th>Option4:</th>
+							<td><input type="text" name="opt4" placeholder="Enter option"></td>
+						</tr>
+                                                <tr>
+							<th>Answer:</th>
+							<td><input type="text" name="ans" placeholder="Enter option"></td>
+						</tr>
+						<tr>
+							<th></th>
+							<td><input type="submit" name="submit"  id="svc" value="Save"></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div id="inner4" style="display:none;">
+				<form action="DelQues" method="get">
+					<table>
+						<tr>
+							<th>Course:</th>
+							<td><input type="text" name="ques" placeholder="Enter course"></td>
+						</tr>
+                                                <tr>
+							<th>Question ID:</th>
+							<td><input type="text" name="qid" placeholder="Enter question ID"></td>
+						</tr>
+						<tr>
+							<th></th>
+							<td><input type="submit" name="submit"  id="svc" value="Save"></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			</div>
+		</div>
+		<div>
+		<h3 style=" margin-top: 50px; margin-left:20%; background-color: rgba(52, 73, 94, 0.5);	 "><a href="#Test1" onclick="myfunc1()" style=" text-decoration: none;  color: black; font-weight: bold; font-size: 25px;">&rarr;  Update Courses</a></h3>
+		<div id="Test1">
+			<input type="button" name="addc" value="Add Courses" id="addc" style=" margin-top: 20px; background-color: #2ecc71; padding: 5px; cursor:pointer;" onclick="addc()">
+				<input type="button" name="delc" value="Delete Courses" id="delc" style="  margin-left: 20px;  background-color: #e74c3c; padding: 5px; cursor: pointer; " onclick="delc()">
+			<div id="inner1" style="display:none;">
+				<form action="AdminUpdateCourseHttpServlet" method="post">
+					<table id="tb">
+						<tr>
+							<th>Course ID:</th>
+							<td><input type="text" name="updatecourseid" placeholder="Enter course"></td>
+						</tr>
+                                                <tr>
+							<th>Course Name:</th>
+							<td><input type="text" name="coursen" placeholder="Enter course name"></td>
+						</tr>
+                                                 <tr>
+							<th>Course Description:</th>
+							<td><input type="text" name="coursedesc" placeholder="Enter course description"></td>
+						</tr>
+						<tr>
+							<th>No.of video links:</th>
+							<td><input type="text" name="updatevl" placeholder="Enter no. of links" id="nl"></td>
+						</tr>
+						<tr>
+							<th>No. of Books links:</th>
+							<td><input type="text" name="updatebl" placeholder="Enter no. of links" id="nlb"></td>
+						</tr>
+						<tr>
+							<td>
+								<input type="button" name="bt" value="Add Links" onclick="mf()">
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>		
+			<div id="inner3" style="display:none;">
+				<form action="AdminUpdateCourseHttpServlet" method="post">
+					<table id="tb">
+						<tr>
+							<th>Course:</th>
+							<td><input type="text" name="coursed" placeholder="Enter course"></td>
+						</tr>
+						<tr>
+							<th>Course ID:</th>
+							<td><input type="text" name="cid" placeholder="Enter course ID"></td>
+						</tr>
+						<tr>
+							<th></th>
+							<td><input type="submit" name="submit"  id="svc" value="Delete"></td>
+						</tr>
+					</table>
+				</form>
+			</div>		
+		</div>
+		</div>
+		<div>
+		<div style="margin-bottom:3vw;">
+		<h3 style=" margin-top: 50px; margin-left:20%; background-color: rgba(52, 73, 94, 0.5);	 "><a href="#Test2" onclick="myfunc2()" style=" text-decoration: none;  color: black; font-weight: bold; font-size: 25px;">&rarr;  Edit Mentor Details</a></h3>
+		<div id="Test2">
+			<input type="button" name="addm" value="Add Mentors" id="addm" style=" margin-top: 20px; background-color: #2ecc71; padding: 5px; cursor:pointer;" onclick="addm()">
+				<input type="button" name="delm" value="Delete Mentors" id="delm" style="  margin-left: 20px;  background-color: #e74c3c; padding: 5px; cursor: pointer; " onclick="delm()">
+		<div id="inner2" style="display:none;">
+			<form action="MentorUpdateHttpServlet" method="get">
+				<table id="tm">
+					<tr>
+						<th>Course ID:</th>
+							<td><input type="text" name="mentorcourseid" placeholder="Enter course"></td>
+					</tr>
+					<tr>
+							<th>No.of mentors:</th>
+							<td><input type="text" name="ques" placeholder="Enter no. of mentors" id="nm"></td>
+					</tr>
+					<tr>
+							<td>
+								<input type="button" name="bt" value="Add Mentors" onclick="mf1()">
+							</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div id="inner5" style="display:none;">
+			<form action="MentorUpdateHttpServlet" method="get">
+				<table id="tmd">
+					<tr>
+						<th>Course ID:</th>
+							<td><input type="text" name="cm" placeholder="Enter course"></td>
+					</tr>
+					<tr>
+							<th>Mail ID of Mentor:</th>
+							<td><input type="text" name="delmentor" placeholder="Enter mail id of mentor" id="nofm"></td>
+					</tr>
+					<tr><th></th><td><input type="submit" name="submit3"  id="svc3" value="Delete"></td></tr>
+				</table>
+			</form>
+		</div>
+		</div>
+		</div>
+		</div>
+
+	</div>
+
+</body>
+	<script type="text/javascript">
+	var p=0;
+	var q=0;
+	var r=0;
+		function myfunc(){
+			q++;
+			document.getElementById("Test").style.display = "block";
+			if (q==2) {
+				document.getElementById("Test").style.display = "none";
+				q=0;
+			}
+		}
+		function addq(){
+			document.getElementById("inner").style.display = "block";
+			document.getElementById("inner4").style.display = "none";
+		}
+		function delq(){
+			document.getElementById("inner").style.display = "none";
+			document.getElementById("inner4").style.display = "block";
+		}
+		function addc(){
+			document.getElementById("inner1").style.display = "block";
+			document.getElementById("inner3").style.display = "none";
+		}
+		function delc(){
+			document.getElementById("inner1").style.display = "none";
+			document.getElementById("inner3").style.display = "block";
+		}
+		function myfunc1(){
+			p=p+1;
+			document.getElementById("Test1").style.display = "block";
+			if(p==2){
+				document.getElementById("Test1").style.display = "none";
+				p=0;
+			}
+		}
+		function myfunc2(){
+			r=r+1;
+			document.getElementById("Test2").style.display = "block";
+			if(r==2){
+				document.getElementById("Test2").style.display = "none";
+				r=0;
+			}
+		}
+		function addm(){
+			document.getElementById("inner2").style.display = "block";
+			document.getElementById("inner5").style.display = "none";
+		}
+		function delm(){
+			document.getElementById("inner2").style.display = "none";
+			document.getElementById("inner5").style.display = "block";
+		}
+	</script>
+	<script type="text/javascript">
+	function mf()
+        {
+            
+	for(i=1; i<= nl.value; i++)
+        {
+            
+		var div = document.createElement("tr");
+                document.getElementById("tb").appendChild(div);
+                div.innerHTML = '<th>Video Link'+i+':</th><td><input type="text" name="ques" id="videodatalink" placeholder="Enter link'+i+'"></td>';
+                var div1 = document.createElement("tr");
+                document.getElementById("tb").appendChild(div1);
+                div1.innerHTML = '<th>Name of Video'+i+':</th><td><input type="text" name="ques1" id="videodataname" placeholder="Enter name of video'+i+'"></td>';
+                
+                
+        }
+        for(i=1; i<= nlb.value; i++)
+        {
+		var div = document.createElement("tr");
+                document.getElementById("tb").appendChild(div);
+                div.innerHTML = '<th>Book Link'+i+':</th><td><input type="text" name="ques2" placeholder="Enter link'+i+'"></td>';
+                var div1 = document.createElement("tr");
+                document.getElementById("tb").appendChild(div1);
+                div1.innerHTML = '<th>Name of Book'+i+':</th><td><input type="text" name="ques3" placeholder="Enter name of video'+i+'"></td>';
+        }
+        var div = document.createElement("tr");
+        document.getElementById("tb").appendChild(div);
+        div.innerHTML='<tr><th></th><td><input type="submit" name="submit"  id="svc" value="Save"></td></tr>';
+        } 
+	function mf1()
+        {
+	for(i=1; i<= nm.value; i++)
+        {
+		var div = document.createElement("tr");
+                document.getElementById("tm").appendChild(div);
+                div.innerHTML = '<th>Mentor'+i+':</th><td><input type="text" name="mentormail" placeholder="Enter e-mail ID of Mentor'+i+'"></td>';
+        }
+        var div = document.createElement("tr");
+        document.getElementById("tm").appendChild(div);
+        div.innerHTML='<tr><th></th><td><input type="submit" name="submit3"  id="svc3" value="Save"></td></tr>';
+        }
+function mf2()
+{
+	for(i=1; i<= nofm.value; i++)
+        {
+		var div = document.createElement("tr");
+                document.getElementById("tmd").appendChild(div);
+                div.innerHTML = '<th>Mentor'+i+':</th><td><input type="text" name="ques" placeholder="Enter e-mail ID of Mentor'+i+'"></td>';
+        }
+        var div = document.createElement("tr");
+        document.getElementById("tmd").appendChild(div);
+        div.innerHTML='<tr><th></th><td><input type="submit" name="submit3"  id="svc3" value="Delete"></td></tr>';
+}
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var menu = "close";
+			$('.menu-toggle').click(function(){
+				if(menu == "close"){
+					$('.navbar').css('-webkit-transform', 'translate(0,0)');
+					$('.text').css('-webkit-transform', 'translate(18%,0)');
+					menu = "open";
+				}
+				else{
+					$('.navbar').css('-webkit-transform', 'translate(-100%,0)');
+					$('.text').css('-webkit-transform', 'translate(0,0)');
+					menu = "close";	
+				}
+			});
+		});
+	</script>
+</html>

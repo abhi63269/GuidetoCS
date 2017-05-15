@@ -1,0 +1,305 @@
+<%@page import="java.util.ArrayList"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/CustomDash.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
+<style type="text/css">
+	.LOB{
+	width: 100%;
+	background-color: black;
+	height: 55px;
+	margin-bottom: 100px;
+}
+
+
+
+
+.Course{
+	border: 2px solid gray;
+	width: 20%;
+	height: 300px;
+	margin-left: 135px;
+	margin-top: 45px;
+	border-radius: 10px; 
+	text-align  : center;
+	vertical-align: middle;
+	box-shadow: 2px 3px 20px;
+	font-family: 'Josefin Sans', sans-serif;
+	float: left;
+	font-size: 12px;
+}
+
+.Course:hover
+{
+	border:2px solid black;
+}
+
+.Circle{
+	margin-top: 50px;
+	margin: 0 auto;
+	margin-top: 50px;
+	border-radius: 100px;
+	width: 100px;
+	height: 100px;
+	display: table;
+	border: 2px solid black;
+	background-image: url(Images/DS.gif);
+	background-size: cover;
+}
+
+.EButton1
+{
+	background-color: #2ecc71;
+	border: 1px solid darkgreen;
+	width: 100px;
+	height: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 25px;
+	font-size: 25px;
+	color: white;
+	border-radius: 2px;
+	cursor: pointer;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.EButton1:hover
+{
+	background-color: #27ae60;
+}
+
+.Line1
+{
+	margin-left: 65px;
+	width: 80%;
+}
+
+.Heading
+{
+	margin-left: 65px;
+	color: #2c3e50;
+	font-family: 'Josefin Sans', sans-serif;
+}
+</style>
+<body>
+
+	<div class="navbar">
+	<h2> Sidebar Menu </h2>
+	<nav>
+		<a href="dashboard.jsp">Home</a>
+		<a href="#insidetasks" onclick="show()">Courses</a>
+		<a href="Profile2.html">Account Settings</a>
+		<a href="CoursesP.html">Courses Enrolled in</a>
+		<a href="mail.jsp">Discussion Forum</a>
+	</nav>
+		
+	</div>
+
+	
+		<div class="text">
+			<div class="Span">
+			<a href="#" class="menu-toggle">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+			</div>
+			<input type="text" name="Search" class="Cen" id="new" placeholder="Search">
+		</div>
+                
+		<h3 class="Name">Welcome <%=session.getAttribute("uname")%> !</h3>
+                
+		<hr class="Line">
+		<div class="container" id="container">
+		<div class="Candiv"  style="float:left; background-color: white; border-radius: 10px; padding: 10px;" id="chart">
+		<canvas id="myChart" width="400" height="150">
+		</canvas>
+		</div>
+		<div style=" width:25%; height:100%; background-color: #ecf0f1; float:right;" id="rem">
+			<div class="Aq">
+				<div class="Nested">
+					<i class="fa fa-question-circle" aria-hidden="true" style=" margin-right: 5px;float:left;"></i>
+					<h4 style="margin-bottom:10px; color:#16191F;">Discuss with us</h4>
+					<h5 style="margin-bottom:10px; color:#34495e; font-weight:bold;">Clear your doubts and get the expert advice for every query and get the best experience.</h5>
+					<input type="text" name="query" placeholder="Ask a query" class="Query"><input type="button" name="askq" class="Askq" value="Go">
+				</div>
+				<div class="Nested">
+					<i class="fa fa-share-square" aria-hidden="true" style=" margin-right: 5px;float:left;"></i>
+					<h4 style="margin-bottom:10px; color:#16191F;">Refer a friend</h4>
+					<h5 style="margin-bottom:10px; color:#34495e; font-weight:bold;">Tell your friends to join with us and we will help them too. Let them take the advantage of  this free and worthy service.</h5>
+					<input type="text" name="query" placeholder="Mail of your friend" class="Query"><input type="button" name="askq" class="Askq" value="Go">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="insidetasks" style="display:none;">
+			
+		</div>
+     
+  <script src="https://code.jquery.com/jquery-1.12.4.js"/>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"/>
+ <script>
+   $(document).ready(function(){
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $("#new").autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var menu = "close";
+			$('.menu-toggle').click(function(){
+				if(menu == "close"){
+					$('.navbar').css('-webkit-transform', 'translate(0,0)');
+					$('.text').css('-webkit-transform', 'translate(18%,0)');
+					menu = "open";
+				}
+				else{
+					$('.navbar').css('-webkit-transform', 'translate(-100%,0)');
+					$('.text').css('-webkit-transform', 'translate(0,0)');
+					menu = "close";	
+				}
+			});
+		});
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script type="text/javascript">
+		var canvas=document.getElementById('myChart');
+		var data = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: [65, 59, 80, 81, 56, 55, 40],
+            spanGaps: false,
+            xAxisNamePadding: "5",
+        }
+    ]
+};
+		var myLineChart = Chart.Line(canvas,{
+			data: data
+		});
+	</script>
+	<script type="text/javascript">
+        var status;
+        var f=false;
+            <%
+          
+           String numOfCourses= (String)session.getAttribute("numOfCourses");
+         int NoOfRows= Integer.parseInt(numOfCourses);
+        ArrayList<String> courseid= (ArrayList<String>)session.getAttribute("courseid");
+        ArrayList<String> coursename=(ArrayList<String>)session.getAttribute("coursename");
+        ArrayList<String> enrolledCourseID=(ArrayList<String>)session.getAttribute("enrolledCourseID");
+         String  numOfCoursesEnroll= (String)session.getAttribute("numOfCoursesEnroll");
+        int NoOfRows1= Integer.parseInt(numOfCoursesEnroll);
+         System.out.println("JSPcourseid"+courseid);
+        System.out.println("JSPcoursename"+coursename);
+    System.out.println("JSPenrolledCourseID"+enrolledCourseID);
+   
+        for(int i=0;i<NoOfRows;i++)
+        {
+            
+        
+           // System.out.println("yeh line chalii");
+            //System.out.println("hiiiie"+courseid);
+        %> 
+        
+        //while(i<NoOfRows)
+        //{
+        var div = document.createElement("div");
+            var courseID="<%=courseid.get(i)%>";
+            var courseName="<%=coursename.get(i)%>";
+            div.id=courseID;
+            var display="Enroll";
+            <%
+                for(int j=0;j<NoOfRows1;j++)
+                {
+                    %>
+            var courseEnrollID="<%=enrolledCourseID.get(j)%>";
+            if(courseEnrollID===courseID)
+            {
+                display="Go to Course";
+               f=true;
+              
+            }   
+            <%
+                }
+            %>
+              div.innerHTML = '<div class="Course"><div class="Circle"></div><h1 style="margin-top:20px;">'+courseName+'</h1><input type="submit" name="'+display+'"  class="EButton1" value="'+display+'&raquo"></div>';
+               
+                    document.getElementById("insidetasks").appendChild(div);
+        
+        <%
+            }
+           
+            
+        %>
+            $("#insidetasks").on("click","div",function() {
+                 Id = $(this).attr('id');
+                //document.getElementById("insidetasks").innerHTML=Id;
+                 var proid=Id;
+            var url = "CourseDisplayHttpServlet?proid="+proid;
+            window.location.href =url;
+                });
+               
+	</script>
+	<script type="text/javascript">
+		function show(){
+			document.getElementById("insidetasks").style.display = "block";
+			document.getElementById("container").style.display = "none";
+			document.getElementById("rem").style.display = "none";
+			$('.navbar').css('-webkit-transform', 'translate(-100%,0)');
+					$('.text').css('-webkit-transform', 'translate(0,0)');
+					menu = "close";
+		}
+	</script>
+</body>
+</html>

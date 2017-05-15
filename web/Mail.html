@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ask a query</title>
+	<link rel="stylesheet" type="text/css" href="css/Mailcss.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+</head>
+<body>
+<div class="parent">
+<h1>Discussion Panel</h1>
+	<div class="inner">
+            <form action="SendQueryHttpServlet" method="post">
+		<table border="0" width:100%;>
+			<tr>
+				<th><h3>To:</h3></th>
+				<td><input type="email" name="to" value="abhi63269@gmail.com"></td>
+			</tr>
+			<tr>
+				<th><h3>From:</h3></th>
+				<td><input type="email" name="from" value="abhi63269@gmail.com" readonly></td>
+			</tr>
+			<tr>
+				<th><h3>Subject:</h3></th>
+				<td><input type="text" name="subject"></td>
+			</tr>
+			<tr>
+				<th><h3>Query:</h3></th>
+				<td><textarea type="email" name="uiux"  rows="20" cols="10"></textarea></td>
+			</tr>
+		</table>
+		<input type="submit" name="Send" value="Send">
+	</form>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+	$('#form').find('.input').keypress(function(e){
+    if ( e.which == 13 ) // Enter key = keycode 13
+    {
+        $(this).next().focus();  //Use whatever selector necessary to focus the 'next' input
+        return false;
+    }
+});
+</script>
+</html>

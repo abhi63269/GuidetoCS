@@ -1,0 +1,52 @@
+body{
+	background-image: url(../Images/Rbg.png);
+	margin-left: 5%;
+}
+
+body h1{
+	font-size: 80px;
+	color: white;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+span{
+  display:block;
+  visibility: hidden;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  }
+
+.Name{
+	width: 65%;
+	height: 25px;
+}
+
+form{
+	width: 100%;
+	padding: 2%;
+	padding-left: 0px;
+}
+
+::-webkit-input-placeholder{
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: bold;
+}
+
+input, select{
+	margin-bottom: 2.5%;
+	width: 65%;
+	height: 25px;
+}
+
+#Register{
+	background-color: transparent;
+	color: white;
+	font-weight: bold;
+	width: 20%;
+	float: right;
+	margin-top: 5%;
+	margin-right: 55%;
+	height: 30px;
+}

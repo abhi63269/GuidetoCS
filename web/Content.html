@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Course</title>
+	<link rel="stylesheet" type="text/css" href="css/Content.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="animate.css-master/animate.min.css">
+</head>
+<body>
+	<div class="navbar">
+	<h2> Sidebar Menu </h2>
+	<nav>
+		<a href="Dash.html">Home</a>
+		<a href="#insidetasks" onclick="show()">Courses</a>
+		<a href="Profile2.html">Account Settings</a>
+		<a href="CoursesP.html">Couses Enrolled in</a>
+		<a href="#">Discussion Forum</a>
+	</nav>
+		
+	</div>
+
+	
+		<div class="text">
+			<div class="Span">
+			<a href="#" class="menu-toggle">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+			</div>
+			<input type="text" name="Search" class="Cen" placeholder="Search" id="new">
+		</div>
+		<div class="parent" id="parent">
+			<h1>Data Structures</h1>
+			<div class="desc">
+				<p>Data structures can implement one or more particular abstract data types (ADT), which specify the operations that can be performed on a data structure and the computational complexity of those operations. In comparison, a data structure is a concrete implementation of the specification provided by an ADT.[citation needed] Different kinds of data structures are suited to different kinds of applications, and some are highly specialized to specific tasks. For example, relational databases commonly use B-tree indexes for data retrieval,[3] while compiler implementations usually use hash tables to look up identifiers.xData structures provide a means to manage large amounts of data efficiently for uses such as large databases and internet indexing services. Usually, efficient data structures are key to designing efficient algorithms. Some formal design methods and programming languages emphasize data structures, rather than algorithms, as the key organizing factor in software design. Data structures can be used to organize the storage and retrieval of information stored in both main memory and secondary memory.</p>
+			</div>
+				<div class="col1">
+				<h1 style="float:left; margin-top: 2vw; margin-left: 5vw; color: #2980b9; ">Go to Videos</h1>
+				<div class="animated bounceInDown">
+					<a href="#video"><div class="col1inside" onclick="vid()">
+						
+					</div>
+					</a>
+				</div> 
+				</div>
+				<div class="col1">
+				<h1 style="float:left; margin-top: 3vw; margin-left: 5vw; color: #2980b9; ">Refer Books</h1>
+				<div class="animated bounceInUp">
+					<a href="#book"><div class="col2inside" onclick="book()">
+						<h1>E-Books</h1>
+					</div>
+					</a>
+				</div>
+				</div>
+				<div class="col1">
+					<input type="button" name="quizbutton" id="qb" value="Proceed for Quiz &#8883;">
+				</div>
+		</div>
+		<div id="video">
+                    <input type="button" name="bk" value="&laquo; Back" id="vbk" onclick="vbk()">
+		</div>
+		<div id="book">
+                    <input type="button" name="bk" value="&laquo; Back" id="vbk" onclick="vbk()">
+		</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var menu = "close";
+			$('.menu-toggle').click(function(){
+				if(menu == "close"){
+					$('.navbar').css('-webkit-transform', 'translate(0,0)');
+					$('.text').css('-webkit-transform', 'translate(18%,0)');
+					menu = "open";
+				}
+				else{
+					$('.navbar').css('-webkit-transform', 'translate(-100%,0)');
+					$('.text').css('-webkit-transform', 'translate(0,0)');
+					menu = "close";	
+				}
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		function vid(){
+			document.getElementById("parent").style.display="none";
+			document.getElementById("video").style.display="block";
+			document.getElementById("book").style.display="none";
+		}
+		function book(){
+			document.getElementById("parent").style.display="none";
+			document.getElementById("video").style.display="none";
+			document.getElementById("book").style.display="block";
+		}
+                function vbk(){
+			document.getElementById("parent").style.display="block";
+			document.getElementById("video").style.display="none";
+			document.getElementById("book").style.display="none";
+		}
+	</script>
+	<script type="text/javascript">
+		var div = document.createElement("div")
+     document.getElementById("video").appendChild(div);
+
+div.innerHTML = '<h1 style="float:left;">Hello</h1><iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL55280492905EE374" frameborder="0" allowfullscreen></iframe>';
+
+	</script>
+	<script type="text/javascript">
+		var div = document.createElement("div")
+     document.getElementById("book").appendChild(div);
+
+div.innerHTML = '<a href="https://www.google.com">><div class="a"><img src="Images/Book.jpg" style="height:150px; width:150px; margin:10px;"><h1>Schaum</h1></div></a>';
+
+	</script>
+</html>

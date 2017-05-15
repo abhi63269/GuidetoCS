@@ -1,0 +1,89 @@
+*{
+	margin: 0px;
+}
+
+
+
+.LOB{
+	width: 100%;
+	background-color: black;
+	height: 55px;
+	margin-bottom: 100px;
+}
+
+.Cen{
+	margin-left: 500px;
+	height: 30px;
+	width: 200px;
+	margin-left: 500px;
+	border-radius: 5px;
+	background-image: url(../Images/Search.png);
+	background-size: 20px 20px;
+	background-position: left;
+	padding-left: 30px;
+	background-repeat:no-repeat;
+	background-position: 2px 3px;
+	color: black;
+	display: inline;
+}
+
+
+.Course{
+	border: 2px solid gray;
+	width: 20%;
+	height: 300px;
+	margin-left: 65px;
+	margin-top: 25px;
+	border-radius: 10px; 
+	text-align  : center;
+	vertical-align: middle;
+	box-shadow: 2px 3px 20px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.Course:hover{
+	border:2px solid black;
+}
+
+.Circle{
+	margin-top: 50px;
+	margin: 0 auto;
+	margin-top: 50px;
+	border-radius: 100px;
+	width: 100px;
+	height: 100px;
+	display: table;
+	border: 2px solid black;
+	background-image: url(../Images/DS.gif);
+	background-size: cover;
+}
+
+.EButton{
+	background-color: #2ecc71;
+	border: 1px solid darkgreen;
+	width: 100px;
+	height: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 25px;
+	font-size: 25px;
+	color: white;
+	border-radius: 2px;
+	cursor: pointer;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.EButton:hover{
+	background-color: #27ae60;
+}
+
+.Line{
+	margin-left: 65px;
+	width: 80%;
+}
+
+.Heading{
+	margin-left: 65px;
+	color: #2c3e50;
+	font-family: 'Josefin Sans', sans-serif;
+}

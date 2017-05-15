@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LogIn</title>
+	<link rel="stylesheet" type="text/css" href="css/Custom.css">
+	<style type="text/css">
+	.aa{
+        float: left;
+        width: 33.3%;
+     }
+     .aab{
+     	margin: 20px;
+     	background-color: rgba(0,0,0,0.6);
+     	
+     	padding: 50px;
+     	margin-top: 100px;
+     	text-align: center;
+     	box-shadow: 2px 2px 20px black;
+     }
+     input{
+     	background-color: transparent;
+     	border-radius: 5px;
+     	height: 40px;
+     	width: 200px;
+     	margin: 0px;
+     	border: none;
+     	border-bottom: 1px solid white;
+     	color: white;
+     	margin-bottom: 50px;
+
+     }
+     input:-webkit-autofill,
+	 input:-webkit-autofill:active {
+      transition: background-color 5000s;
+}
+     ::-webkit-input-placeholder { 
+  		 color: white;
+	}	
+	input[type=text]:focus {
+    	background-color: transparent;
+    	color: white;
+	}
+	.bt{
+        align: center;
+        margin: 0px;
+        display: inline-block;
+        margin-left: 190px;
+        height: 35px;
+        background-image: url(Images/Button.jpg);
+        background-size: cover;
+        border: none;
+        box-shadow: 2px 2px 20px #000000;
+        color: white;
+      }
+      .bt:hover{
+        opacity: .7;
+	</style>
+</head>
+<body class="Log">
+<div class="aa">
+	<h1></h1>
+</div>
+<div class="aa">
+	<div class="aab">
+		<form action="AdminCheckHttpServlet" method="post">
+			<input class="Usr" type="text" name="admail" placeholder="Enter your EMail" autocomplete="off">
+			<input class="Usr1" type="password" name="adpassword" placeholder="Enter Password">
+			 <input type="submit" class="bt" value="Log-In &raquo;">
+		</form>
+		
+	</div>
+	
+</div>
+</body>
+</html>
